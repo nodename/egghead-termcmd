@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Run command in a new Terminal window in the current working directory
+# The terminal window will close when the command exits
+
+if [[ "$#" -eq 0 ]]; then
+  echo "Usage: `basename $0` command [args]"
+  exit -1
+fi
+
+osascript <<- END
+tell application "Terminal"
+  do script "cd `pwd`; clear; $*; exit"
+  activate
+end tell
+END
+
