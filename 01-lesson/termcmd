@@ -10,7 +10,7 @@ fi
 
 osascript <<- END
 tell application "Terminal"
-  do script "cd `pwd`; clear; $*; exit"
+  do script "cd \"`pwd`\"; clear; $*; exit"
   activate
 end tell
 END
